@@ -6,3 +6,8 @@
     2) Also program needs some additional libraries, so you need to run in terminal "pip install -r requirements.txt"
     3) You need to get your OWN YOUTUBE API KEY in google cloud console
     4) And finally run python3 main.py -h, to know avaible commands
+ 
+### Example commands
+    1) python3 main.py neffex -m 10
+    2) python3 main.py "neffex cold" -m 1
+    3) python3 main.py "neffex crown lyrics"
