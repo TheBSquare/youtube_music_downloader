@@ -1,0 +1,5 @@
+isodate~=0.6.0
+pytube~=10.7.2
+google-api-python-client
+google-auth-oauthlib
+google-auth-httplib2
