@@ -45,6 +45,9 @@ def download_audio(video_id):
 
     # removing mp4
     remove(mp4)
-    return mp4, mp3
+    return mp3
 
 
+def del_files(*files):
+    for file in files:
+        remove(file)
