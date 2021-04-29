@@ -1,17 +1,17 @@
-#!/usr/bin/env python3
 from logic import *
+import os
 
 
 def main():
     # youtube parser
-    parser = YoutubeParser('logic/youtube_scripts/drivers/chromedriver')
+    parser = YoutubeParser(''.join((os.path.abspath(__file__).replace('main.py', ''),
+                                    '/logic/youtube_scripts/drivers/chromedriver')))
 
     # asking user for some vars
     video_name = input('Enter the name of youtube video: ')
-    max_results = int(input('Enter the number of max results: '))
 
     # getting videos
-    videos = parser.get_videos_by_name(video_name, max_results)
+    videos = parser.get_videos_by_name(video_name)
 
     # closing parser
     parser.exit()
