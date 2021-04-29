@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-from logic.files_handler import convert_to_mp3, del_files
-from logic.youtube_scripts import YoutubeParser, download_video
+from logic import *
 
 
 def main():
