@@ -1,11 +1,11 @@
-from logic import *
-import os
+from logic import YoutubeParser
+from logic import download_from_youtube
+from settings import output
 
 
 def main():
     # youtube parser
-    parser = YoutubeParser(''.join((os.path.abspath(__file__).replace('main.py', ''),
-                                    '/logic/youtube_scripts/drivers/chromedriver')))
+    parser = YoutubeParser()
 
     # asking user for some vars
     video_name = input('Enter the name of youtube video: ')
@@ -23,22 +23,20 @@ def main():
     # asking user to choose video number
     video_number = int(input("Enter the video number:")) - 1
 
-    # download video
-    mp4 = download_video(videos[video_number])
-    print(f'Downloaded file "{mp4}"')
+    # ask what to do
+    operation = input(f'1. Download video\n'
+                      f'2. Download audio\n'
+                      f'3. Download both\n'
+                      f'Enter the number of the operation: ')
+    operations = {
+        '1': 'only_video',
+        '2': 'only_audio',
+        '3': 'both'
+    }
 
-    # convert video to mp3
-    mp3 = convert_to_mp3(mp4)
-    print(f'Converted "{mp4}" to "{mp3}"')
-
-    if input(f'Input y/Y to del {mp4}: ') in 'yY':
-        del_files(mp4)
-        print(f'Removed file {mp4}')
-
-    if input(f'Input y/Y to del {mp3}: ') in 'yY':
-        del_files(mp3)
-        print(f'Removed file {mp3}')
+    download_from_youtube(videos[video_number]['link'], download_type=operations[operation], output_dir=output)
 
 
 if __name__ == '__main__':
     main()
+
