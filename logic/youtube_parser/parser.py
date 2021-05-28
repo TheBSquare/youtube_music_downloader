@@ -1,5 +1,5 @@
-from selenium.webdriver import Chrome
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver import Firefox
+from selenium.webdriver.firefox.options import Options
 from time import sleep
 
 
@@ -7,8 +7,8 @@ class YoutubeParser:
     __options = Options()
     __options.headless = True
 
-    def __init__(self, driver_path):
-        self.__driver = Chrome(driver_path, options=self.__options)
+    def __init__(self):
+        self.__driver = Firefox(options=self.__options)
 
     def get_videos_by_name(self, name, amount=1):
         self.__driver.get(f'https://www.youtube.com/results?search_query={name}&sp=EgIQAQ%253D%253D')

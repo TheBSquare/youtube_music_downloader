@@ -1,3 +1,2 @@
-from .youtube_scripts.youtube_parser import YoutubeParser
-from .youtube_scripts.additional import download_video
-from .files_handler import convert_to_mp3, del_files
+from .youtube_parser.parser import YoutubeParser
+from .youtube_downloader.youtube_downloader import download_from_youtube

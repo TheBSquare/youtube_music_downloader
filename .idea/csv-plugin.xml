@@ -24,6 +24,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/logic/youtube_downloader/youtube_downloader.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/logic/youtube_scripts/additional.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/logic/youtube_scripts/api.py">
           <value>
             <Attribute>
